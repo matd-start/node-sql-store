@@ -1,0 +1,40 @@
+@api = http://localhost:3000/products
+# @api  es una varible que puedes cambiarla por la url de tu servidor si es diferente
+# para usar rest-client, primero debes tener configurado la base de datos y el servidor corriendo 
+
+### obteniendo todos los productos, pulsa send request
+GET {{api}}
+
+### ingresando un producto, Rellena los campos con los productos nuevos, pulsa send request
+POST {{api}}
+Content-Type: application/json
+
+{
+    "name": "smartphone",
+    "description": "smartphone xiaomi",
+    "price": 100,
+    "quantity": 4
+}
+
+
+### obteniendo un produccto, pulsa send request y id del producto a obtener
+GET {{api}}/3
+
+
+### borrando un producto, pulsa send request y id del producto a borrar
+DELETE {{api}}/6 
+
+
+### obteniendo el total de productos, pulsa send request
+GET {{api}}/count
+
+### actualizar un producto, pulsa send request y id del producto a actualizar
+PUT {{api}}/3
+Content-Type: application/json
+
+{
+    "name": "laptop HP",
+    "price": 250,
+    "quantity": 6,
+    "description": "gaming laptop HP"
+}
